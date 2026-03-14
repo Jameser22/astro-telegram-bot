@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from datetime import datetime, time, timedelta, timezone, date
 from pathlib import Path
 from zoneinfo import ZoneInfo
+from openai import OpenAI
 
 import swisseph as swe
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
