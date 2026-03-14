@@ -2,11 +2,23 @@ services:
   - type: worker
     name: astro-telegram-bot
     env: python
+    plan: starter
+
     buildCommand: pip install -r requirements.txt
     startCommand: python bot.py
-    plan: starter
+
     envVars:
       - key: BOT_TOKEN
         sync: false
+
+      - key: OPENAI_API_KEY
+        sync: false
+
+      - key: OPENAI_MODEL
+        value: gpt-5
+
       - key: USER_TZ
         value: Europe/Moscow
+
+      - key: DEFAULT_SEND_TIME
+        value: "08:30"
